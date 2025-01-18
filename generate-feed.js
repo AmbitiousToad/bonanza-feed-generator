@@ -4,9 +4,9 @@ import fs from 'fs/promises';
 
 const CONFIG = {
     pageUrl: 'https://robstenders.nl/podcast/9/index',  // <- Change this!
-    feedTitle: 'Stenders Bonanza', // <- Change this!
-    feedDescription: 'De dagelijkse uitzending van Rob Stenders Bonbanza op Veronica', // <- Change this!
-    feedAuthor: 'Dusty', // <- Change this!
+    feedTitle: 'De Bonanza', // <- Change this!
+    feedDescription: 'De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.', // <- Change this!
+    feedAuthor: 'Rob Stenders', // <- Change this!
     feedLanguage: 'nl-nl',
     feedImage: 'https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png'  // Optional: Add URL to podcast artwork
 };
