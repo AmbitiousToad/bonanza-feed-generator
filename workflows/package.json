@@ -1,0 +1,11 @@
+{
+  "name": "auto-podcast-feed",
+  "version": "1.0.0",
+  "description": "Automatic podcast feed generator",
+  "main": "generate-feed.js",
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "jsdom": "^22.1.0"
+  },
+  "type": "module"
+}
