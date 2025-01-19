@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>De Bonanza</title>
-        <description>De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Jij bepaalt welke muziek er wordt gedraaid. Vraag jouw favoriete platen aan via de gratis Radio Veronica app.</description>
+        <description>De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Dit is geen officiële podcast feed van Veronica of Rob Stenders. De feed wordt automatisch gegenereerd op basis van informatie op de website van Rob Stenders.</description>
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Sun, 19 Jan 2025 06:12:55 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Jan 2025 08:12:07 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
