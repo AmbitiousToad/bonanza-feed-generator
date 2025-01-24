@@ -6,13 +6,21 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Fri, 24 Jan 2025 12:18:17 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jan 2025 18:13:36 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
             <title>De Bonanza</title>
             <link>https://robstenders.nl/podcast/9/index</link>
         </image>
+        <item>
+            <title>24-01-2025 (171.66 MB)</title>
+            <description>24-01-2025 (171.66 MB)</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-01-24_(14-16)-ekdom-stenders.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-01-24_(14-16)-ekdom-stenders.mp3</guid>
+            <pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate>
+            <itunes:duration>00:00:00</itunes:duration>
+        </item>
         <item>
             <title>23-01-2025 (171.66 MB)</title>
             <description>23-01-2025 (171.66 MB)</description>
