@@ -6,13 +6,21 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Mon, 02 Jun 2025 12:22:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Jun 2025 18:16:06 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
             <title>De Bonanza</title>
             <link>https://robstenders.nl/podcast/9/index</link>
         </image>
+        <item>
+            <title>02-06-2025 (171.66 MB)</title>
+            <description>02-06-2025 (171.66 MB)</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-06-02_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-06-02_(14-16)-bonanza.mp3</guid>
+            <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+            <itunes:duration>00:00:00</itunes:duration>
+        </item>
         <item>
             <title>29-05-2025 (171.66 MB)</title>
             <description>29-05-2025 (171.66 MB)</description>
@@ -267,38 +275,6 @@
             <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-07_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
             <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-07_(14-16)-bonanza.mp3</guid>
             <pubDate>Mon, 07 Apr 2025 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>03-04-2025 (171.71 MB)</title>
-            <description>03-04-2025 (171.71 MB)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-03_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-03_(14-16)-bonanza.mp3</guid>
-            <pubDate>Thu, 03 Apr 2025 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>02-04-2025 (128 bytes)</title>
-            <description>02-04-2025 (128 bytes)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-02_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-02_(14-16)-bonanza.mp3</guid>
-            <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>01-04-2025 (171.66 MB)</title>
-            <description>01-04-2025 (171.66 MB)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-01_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-04-01_(14-16)-bonanza.mp3</guid>
-            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>31-03-2025 (171.66 MB)</title>
-            <description>31-03-2025 (171.66 MB)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-03-31_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-03-31_(14-16)-bonanza.mp3</guid>
-            <pubDate>Mon, 31 Mar 2025 00:00:00 GMT</pubDate>
             <itunes:duration>00:00:00</itunes:duration>
         </item>
     </channel>
