@@ -6,7 +6,7 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Sat, 27 Dec 2025 12:22:16 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Dec 2025 18:17:01 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
@@ -286,19 +286,11 @@
             <itunes:duration>00:00:00</itunes:duration>
         </item>
         <item>
-            <title>28-10-2025 (171.66 MB)</title>
-            <description>28-10-2025 (171.66 MB)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-28_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-28_(14-16)-bonanza.mp3</guid>
-            <pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>27-10-2025 (171.66 MB)</title>
-            <description>27-10-2025 (171.66 MB)</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-27_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-27_(14-16)-bonanza.mp3</guid>
-            <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+            <title>16-10-2025 (141.47 MB)</title>
+            <description>16-10-2025 (141.47 MB)</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-16_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2025-10-16_(14-16)-bonanza.mp3</guid>
+            <pubDate>Thu, 16 Oct 2025 00:00:00 GMT</pubDate>
             <itunes:duration>00:00:00</itunes:duration>
         </item>
     </channel>
