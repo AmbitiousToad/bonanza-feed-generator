@@ -6,13 +6,21 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Wed, 18 Feb 2026 12:39:04 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 18 Feb 2026 18:39:23 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
             <title>De Bonanza</title>
             <link>https://robstenders.nl/podcast/9/index</link>
         </image>
+        <item>
+            <title>18-02-2026 (171.86 MB)</title>
+            <description>18-02-2026 (171.86 MB)</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-18_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-18_(14-16)-bonanza.mp3</guid>
+            <pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate>
+            <itunes:duration>00:00:00</itunes:duration>
+        </item>
         <item>
             <title>17-02-2026 (171.89 MB)</title>
             <description>17-02-2026 (171.89 MB)</description>
