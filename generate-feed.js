@@ -3,12 +3,12 @@ import { JSDOM } from 'jsdom';
 import fs from 'fs/promises';
 
 const CONFIG = {
-    pageUrl: 'https://robstenders.nl/podcast/9/index',  // <- Change this!
-    feedTitle: 'De Bonanza', // <- Change this!
-    feedDescription: 'De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Dit is geen officiële podcast feed van Veronica of Rob Stenders. De feed wordt automatisch gegenereerd op basis van informatie op de website van Rob Stenders.', // <- Change this!
-    feedAuthor: 'Rob Stenders', // <- Change this!
+    pageUrl: 'https://robstenders.nl/podcast/9/index',
+    feedTitle: 'De Bonanza',
+    feedDescription: 'De Bonanza met Rob Stenders is elke werkdag van 14:00 tot 16:00 uur te horen op Radio Veronica. Dit is geen officiële podcast feed van Veronica of Rob Stenders. De feed wordt automatisch gegenereerd op basis van informatie op de website van Rob Stenders.',
+    feedAuthor: 'Rob Stenders',
     feedLanguage: 'nl-nl',
-    feedImage: 'https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png'  // Optional: Add URL to podcast artwork
+    feedImage: 'https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png'
 };
 
 async function generatePodcastFeed() {
@@ -48,12 +48,32 @@ async function generatePodcastFeed() {
         // Process each MP3 link
         for (const link of links) {
             const url = new URL(link.href, CONFIG.pageUrl).href;
-            const title = link.textContent.trim() || url.split('/').pop();
+            const rawTitle = link.textContent.trim() || url.split('/').pop();
             
-            // Try to extract date from filename or link text
-            const dateMatch = (url + title).match(/(\d{4}[-_]?\d{2}[-_]?\d{2})/);
-            const pubDate = dateMatch 
-                ? new Date(dateMatch[1].replace(/_/g, '-')).toUTCString()
+            // Extract date from title (format: dd-mm-yyyy)
+            const dateMatch = rawTitle.match(/(\d{2})-(\d{2})-(\d{4})/);
+            let title = rawTitle;
+            
+            if (dateMatch) {
+                const day = dateMatch[1];
+                const month = dateMatch[2];
+                const year = dateMatch[3];
+                const date = new Date(`${year}-${month}-${day}`);
+                
+                // Dutch day and month names
+                const days = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
+                const months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+                
+                const dayName = days[date.getDay()];
+                const monthName = months[date.getMonth()];
+                
+                title = `${dayName} ${parseInt(day)} ${monthName} ${year} - De Bonanza`;
+            }
+            
+            // Try to extract date from filename or link text for pubDate
+            const pubDateMatch = rawTitle.match(/(\d{2})-(\d{2})-(\d{4})/);
+            const pubDate = pubDateMatch 
+                ? new Date(`${pubDateMatch[3]}-${pubDateMatch[2]}-${pubDateMatch[1]}`).toUTCString()
                 : new Date().toUTCString();
             
             rss += `
