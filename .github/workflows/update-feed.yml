@@ -1,24 +1,28 @@
 name: Update Podcast Feed
-
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   update-feed:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # <-- NIEUW
     
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # <-- NIEUW
       
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: '20'  # of '22'
+          cache: 'npm'  # <-- NIEUW
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # <-- GEWIJZIGD (was: npm install)
         
       - name: Generate feed
         run: node generate-feed.js
