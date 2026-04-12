@@ -8,21 +8,20 @@ jobs:
   update-feed:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # <-- NIEUW
+      contents: write
     
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 0  # <-- NIEUW
+          fetch-depth: 0
       
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'  # of '22'
-          cache: 'npm'  # <-- NIEUW
+          node-version: '20'
           
       - name: Install dependencies
-        run: npm ci  # <-- GEWIJZIGD (was: npm install)
+        run: npm install
         
       - name: Generate feed
         run: node generate-feed.js
