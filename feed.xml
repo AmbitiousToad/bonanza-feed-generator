@@ -6,13 +6,21 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Mon, 27 Apr 2026 13:17:52 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Apr 2026 19:03:59 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
             <title>De Bonanza</title>
             <link>https://robstenders.nl/podcast/9/index</link>
         </image>
+        <item>
+            <title>Maandag 27 april 2026 - De Bonanza</title>
+            <description>Maandag 27 april 2026 - De Bonanza</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-04-27_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-04-27_(14-16)-bonanza.mp3</guid>
+            <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
+            <itunes:duration>00:00:00</itunes:duration>
+        </item>
         <item>
             <title>Donderdag 23 april 2026 - De Bonanza</title>
             <description>Donderdag 23 april 2026 - De Bonanza</description>
@@ -275,30 +283,6 @@
             <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-26_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
             <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-26_(14-16)-bonanza.mp3</guid>
             <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>Woensdag 25 februari 2026 - De Bonanza</title>
-            <description>Woensdag 25 februari 2026 - De Bonanza</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-25_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-25_(14-16)-bonanza.mp3</guid>
-            <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>Dinsdag 24 februari 2026 - De Bonanza</title>
-            <description>Dinsdag 24 februari 2026 - De Bonanza</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-24_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-24_(14-16)-bonanza.mp3</guid>
-            <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-            <itunes:duration>00:00:00</itunes:duration>
-        </item>
-        <item>
-            <title>Maandag 23 februari 2026 - De Bonanza</title>
-            <description>Maandag 23 februari 2026 - De Bonanza</description>
-            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-23_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
-            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-02-23_(14-16)-bonanza.mp3</guid>
-            <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
             <itunes:duration>00:00:00</itunes:duration>
         </item>
     </channel>
