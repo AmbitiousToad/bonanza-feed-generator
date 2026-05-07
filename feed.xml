@@ -6,13 +6,21 @@
         <link>https://robstenders.nl/podcast/9/index</link>
         <language>nl-nl</language>
         <itunes:author>Rob Stenders</itunes:author>
-        <lastBuildDate>Thu, 07 May 2026 13:27:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 May 2026 19:25:32 GMT</lastBuildDate>
         <itunes:image href="https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png"/>
         <image>
             <url>https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png</url>
             <title>De Bonanza</title>
             <link>https://robstenders.nl/podcast/9/index</link>
         </image>
+        <item>
+            <title>Donderdag 7 mei 2026 - De Bonanza</title>
+            <description>Donderdag 7 mei 2026 - De Bonanza</description>
+            <enclosure url="https://podcasts.robstenders.nl/podcasts/bonanza/2026-05-07_(14-16)-bonanza.mp3" type="audio/mpeg" length="0"/>
+            <guid isPermaLink="true">https://podcasts.robstenders.nl/podcasts/bonanza/2026-05-07_(14-16)-bonanza.mp3</guid>
+            <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+            <itunes:duration>00:00:00</itunes:duration>
+        </item>
         <item>
             <title>Woensdag 6 mei 2026 - De Bonanza</title>
             <description>Woensdag 6 mei 2026 - De Bonanza</description>
