@@ -1,7 +1,8 @@
 name: Update Podcast Feed
+
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '17 5,11,17,23 * * *'
   workflow_dispatch:
 
 jobs:
@@ -9,23 +10,46 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '20'
-          
+
       - name: Install dependencies
         run: npm install
-        
+
+      - name: Diagnose verbinding
+        continue-on-error: true
+        run: |
+          echo "=== Tijd (UTC) ==="
+          date -u
+          echo ""
+          echo "=== Publiek IP van deze runner ==="
+          curl -s --max-time 10 https://api.ipify.org || echo "ipify onbereikbaar"
+          echo ""
+          echo ""
+          echo "=== DNS ==="
+          getent hosts robstenders.nl || echo "DNS-lookup mislukt"
+          echo ""
+          echo "=== Curl met timing (3 pogingen) ==="
+          for i in 1 2 3; do
+            echo "--- poging $i ---"
+            curl -sS -o /dev/null -w 'http=%{http_code} dns=%{time_namelookup}s connect=%{time_connect}s tls=%{time_appconnect}s totaal=%{time_total}s\n' \
+              --max-time 30 \
+              -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+              https://robstenders.nl/podcast/9/index || echo "curl exit code $?"
+            sleep 3
+          done
+
       - name: Generate feed
         run: node generate-feed.js
-        
+
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Action'
