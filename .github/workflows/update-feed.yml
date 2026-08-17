@@ -27,25 +27,30 @@ jobs:
       - name: Diagnose verbinding
         continue-on-error: true
         run: |
+          URL='https://robstenders.nl/podcast/9/index'
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          FMT='http=%{http_code} versie=%{http_version} bytes=%{size_download} totaal=%{time_total}s\n'
+
           echo "=== Tijd (UTC) ==="
           date -u
           echo ""
-          echo "=== Publiek IP van deze runner ==="
-          curl -s --max-time 10 https://api.ipify.org || echo "ipify onbereikbaar"
+          echo "=== DNS: IPv4-adressen ==="
+          getent ahostsv4 robstenders.nl || echo "GEEN IPv4-adres gevonden"
           echo ""
+          echo "=== DNS: IPv6-adressen ==="
+          getent ahostsv6 robstenders.nl || echo "GEEN IPv6-adres gevonden"
           echo ""
-          echo "=== DNS ==="
-          getent hosts robstenders.nl || echo "DNS-lookup mislukt"
+          echo "=== A) standaard (HTTP/2, IPv6) ==="
+          curl -sS -o /dev/null -w "$FMT" --max-time 30 -A "$UA" "$URL" || echo "exit $?"
           echo ""
-          echo "=== Curl met timing (3 pogingen) ==="
-          for i in 1 2 3; do
-            echo "--- poging $i ---"
-            curl -sS -o /dev/null -w 'http=%{http_code} dns=%{time_namelookup}s connect=%{time_connect}s tls=%{time_appconnect}s totaal=%{time_total}s\n' \
-              --max-time 30 \
-              -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
-              https://robstenders.nl/podcast/9/index || echo "curl exit code $?"
-            sleep 3
-          done
+          echo "=== B) geforceerd HTTP/1.1 ==="
+          curl -sS -o /dev/null -w "$FMT" --max-time 30 --http1.1 -A "$UA" "$URL" || echo "exit $?"
+          echo ""
+          echo "=== C) geforceerd IPv4 ==="
+          curl -sS -o /dev/null -w "$FMT" --max-time 30 -4 -A "$UA" "$URL" || echo "exit $?"
+          echo ""
+          echo "=== D) IPv4 + HTTP/1.1 ==="
+          curl -sS -o /dev/null -w "$FMT" --max-time 30 -4 --http1.1 -A "$UA" "$URL" || echo "exit $?"
 
       - name: Generate feed
         run: node generate-feed.js
