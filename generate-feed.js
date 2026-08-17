@@ -9,47 +9,68 @@ const CONFIG = {
     feedAuthor: 'Rob Stenders',
     feedLanguage: 'nl-nl',
     feedImage: 'https://pbs.twimg.com/profile_images/646042764493373441/q3Cw3a5y.png',
-    retryDelays: [2000, 5000, 10000, 20000, 30000],
-    requestTimeout: 30000
+    requestTimeout: 45000
 };
+
+// Ophaalmethodes, in volgorde van voorkeur
+const FETCH_METHODS = [
+    {
+        naam: 'direct',
+        url: (target) => target
+    },
+    {
+        naam: 'allorigins',
+        url: (target) => `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`
+    },
+    {
+        naam: 'codetabs',
+        url: (target) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`
+    }
+];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function fetchPageWithRetry() {
-    const maxAttempts = CONFIG.retryDelays.length + 1;
+async function haalOp(url) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), CONFIG.requestTimeout);
 
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), CONFIG.requestTimeout);
+    try {
+        const response = await fetch(url, {
+            signal: controller.signal,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml',
+                'Accept-Language': 'nl-NL,nl;q=0.9'
+            }
+        });
 
-        try {
-            console.log(`Poging ${attempt}/${maxAttempts}: ${CONFIG.pageUrl}`);
-            const response = await fetch(CONFIG.pageUrl, {
-                signal: controller.signal,
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Accept': 'text/html,application/xhtml+xml',
-                    'Accept-Language': 'nl-NL,nl;q=0.9'
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+        }
+
+        return await response.text();
+    } finally {
+        clearTimeout(timeoutId);
+    }
+}
+
+async function haalPaginaOp() {
+    for (const methode of FETCH_METHODS) {
+        for (let poging = 1; poging <= 2; poging++) {
+            try {
+                console.log(`Methode "${methode.naam}", poging ${poging}/2`);
+                const html = await haalOp(methode.url(CONFIG.pageUrl));
+
+                if (!html || html.length < 500) {
+                    throw new Error(`Verdacht korte respons (${html ? html.length : 0} tekens)`);
                 }
-            });
 
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status} ${response.statusText}`);
+                console.log(`Gelukt via "${methode.naam}" (${html.length} tekens)`);
+                return html;
+            } catch (error) {
+                console.warn(`  mislukt: ${error.message}`);
+                if (poging === 1) await sleep(3000);
             }
-
-            return await response.text();
-        } catch (error) {
-            console.warn(`Poging ${attempt} mislukt: ${error.message}`);
-
-            if (attempt === maxAttempts) {
-                return null;
-            }
-
-            const delay = CONFIG.retryDelays[attempt - 1];
-            console.log(`Nieuwe poging over ${delay / 1000} seconden...`);
-            await sleep(delay);
-        } finally {
-            clearTimeout(timeoutId);
         }
     }
 
@@ -57,10 +78,10 @@ async function fetchPageWithRetry() {
 }
 
 async function generatePodcastFeed() {
-    const html = await fetchPageWithRetry();
+    const html = await haalPaginaOp();
 
     if (html === null) {
-        console.warn('Website niet bereikbaar na alle pogingen. Bestaande feed.xml blijft ongewijzigd.');
+        console.warn('Pagina via geen enkele methode op te halen. Bestaande feed.xml blijft ongewijzigd.');
         process.exit(0);
     }
 
@@ -97,7 +118,7 @@ async function generatePodcastFeed() {
         }
 
         for (const link of links) {
-            const url = new URL(link.href, CONFIG.pageUrl).href;
+            const url = new URL(link.getAttribute('href'), CONFIG.pageUrl).href;
             const rawTitle = link.textContent.trim() || url.split('/').pop();
 
             const dateMatch = rawTitle.match(/(\d{2})-(\d{2})-(\d{4})/);
